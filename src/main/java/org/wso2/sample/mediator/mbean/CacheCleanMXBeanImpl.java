@@ -1,13 +1,13 @@
-package org.wso2.sample;
+package org.wso2.sample.mediator.mbean;
 
 import org.wso2.carbon.context.PrivilegedCarbonContext;
 
 import javax.cache.CacheManager;
 import javax.cache.Caching;
 
-import static org.wso2.sample.TestMediatorCache.CACHE_MANAGER_NAME;
-import static org.wso2.sample.TestMediatorCache.CACHE_NAME;
-import static org.wso2.sample.TestMediatorCache.SUPER_TENANT_DOMAIN;
+import static org.wso2.sample.mediator.cache.TestMediatorCache.CACHE_MANAGER_NAME;
+import static org.wso2.sample.mediator.cache.TestMediatorCache.CACHE_NAME;
+import static org.wso2.sample.mediator.cache.TestMediatorCache.SUPER_TENANT_DOMAIN;
 
 public class CacheCleanMXBeanImpl implements CacheCleanMXBean {
 

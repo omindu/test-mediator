@@ -1,4 +1,4 @@
-package org.wso2.sample;
+package org.wso2.sample.mediator.mbean;
 
 /**
  * Interface for the Cache clear MX Bean,

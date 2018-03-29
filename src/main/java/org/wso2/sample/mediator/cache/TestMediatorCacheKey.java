@@ -1,4 +1,4 @@
-package org.wso2.sample;
+package org.wso2.sample.mediator.cache;
 
 import java.io.Serializable;
 import java.util.Objects;

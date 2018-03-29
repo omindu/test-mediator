@@ -1,10 +1,11 @@
-package org.wso2.sample;
+package org.wso2.sample.mediator.cache;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.caching.impl.CacheImpl;
 import org.wso2.carbon.context.PrivilegedCarbonContext;
 import org.wso2.carbon.utils.ManagementFactory;
+import org.wso2.sample.mediator.mbean.CacheCleanMXBeanImpl;
 
 import java.util.concurrent.TimeUnit;
 import javax.cache.Cache;
@@ -35,10 +36,10 @@ public class TestMediatorCache {
         // An MBean is registered in the server for clearing mediator cache through JMX.
         try {
             MBeanServer mbs = ManagementFactory.getMBeanServer();
-            ObjectName name = new ObjectName("org.wso2.sample:type=TestMediatorCacheClearMXBean");
+            ObjectName name = new ObjectName("org.wso2.sample.mediator.cache:type=TestMediatorCacheClearMXBean");
             CacheCleanMXBeanImpl cacheCleanMXBean = new CacheCleanMXBeanImpl();
             mbs.registerMBean(cacheCleanMXBean, name);
-            if (log.isDebugEnabled()); {
+            if (log.isDebugEnabled()) {
                 log.debug("TestMediatorCacheClearMXBean added to the MBean server");
             }
         } catch (MalformedObjectNameException | InstanceAlreadyExistsException | MBeanRegistrationException |
@@ -90,7 +91,8 @@ public class TestMediatorCache {
 
     /**
      * Add entry to cache.
-     * @param key Cache key.
+     *
+     * @param key   Cache key.
      * @param entry Cache entry.
      */
     public void addToCache(TestMediatorCacheKey key, TestMediatorCacheEntry entry) {
@@ -110,6 +112,7 @@ public class TestMediatorCache {
 
     /**
      * Get cache entry by cache key.
+     *
      * @param key Cache key.
      * @return Cache entry if exist, null otherwise.
      */
@@ -136,6 +139,7 @@ public class TestMediatorCache {
 
     /**
      * Clear a cache entry by cache key.
+     *
      * @param key Cache key.
      */
     public void clearCacheEntry(TestMediatorCacheKey key) {

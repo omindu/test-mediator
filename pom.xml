@@ -119,7 +119,7 @@
                     <instructions>
                         <Bundle-SymbolicName>TestMediator</Bundle-SymbolicName>
                         <Bundle-Name>TestMediator</Bundle-Name>
-                        <Export-Package>org.wso2.sample</Export-Package>
+                        <Export-Package>org.wso2.sample.mediator.*</Export-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
